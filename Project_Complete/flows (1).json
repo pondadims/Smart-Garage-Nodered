@@ -1,0 +1,1057 @@
+[
+    {
+        "id": "de73edb8b23a34f6",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7d794cb3ab05fc07",
+        "type": "mqtt in",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "topic": "/Node-RED-Do",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f689178ede6888cf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "330b6b0e3ab9c921",
+                "018b9249e11d95d9",
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "ec0bd2e8569a3ef9",
+        "type": "ui_text",
+        "z": "de73edb8b23a34f6",
+        "group": "2f2fb62454ea311c",
+        "order": 13,
+        "width": 6,
+        "height": 2,
+        "name": "",
+        "label": "CAR STATE",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 790,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8597829ffd3b48e4",
+        "type": "mqtt in",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "topic": "/Node-RED-Dc",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f689178ede6888cf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "07a6d27317257884",
+                "330b6b0e3ab9c921",
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "05d3ea30fed5babf",
+        "type": "ui_button",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "group": "2f2fb62454ea311c",
+        "order": 10,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "CLOSE",
+        "tooltip": "",
+        "color": "yellow",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "C",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 80,
+        "y": 580,
+        "wires": [
+            [
+                "2b15bfa5494e1381"
+            ]
+        ]
+    },
+    {
+        "id": "2e03ce7b338aaefe",
+        "type": "ui_button",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "group": "2f2fb62454ea311c",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "OPEN",
+        "tooltip": "",
+        "color": "yellow",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "O",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 70,
+        "y": 540,
+        "wires": [
+            [
+                "2b15bfa5494e1381"
+            ]
+        ]
+    },
+    {
+        "id": "f686681bca90a6a7",
+        "type": "mqtt out",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "topic": "/ThinkIOT/Servo-nodered",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f689178ede6888cf",
+        "x": 490,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "1b49968ee715f8d8",
+        "type": "ui_text",
+        "z": "de73edb8b23a34f6",
+        "group": "2f2fb62454ea311c",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "DOOR CONTROLLER",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1080,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "333ae26850816b72",
+        "type": "ui_text",
+        "z": "de73edb8b23a34f6",
+        "group": "2f2fb62454ea311c",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "EVENT STATUS",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1060,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "78b0ffaebc011a65",
+        "type": "debug",
+        "z": "de73edb8b23a34f6",
+        "name": "DOOR STATUS",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "583d71f62f4d07b8",
+        "type": "debug",
+        "z": "de73edb8b23a34f6",
+        "name": "CAR STATE",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "330b6b0e3ab9c921",
+        "type": "function",
+        "z": "de73edb8b23a34f6",
+        "name": "db_monitoring",
+        "func": "msg.topic = \"INSERT INTO table_sensor(log_door) VALUES ('\"+msg.payload+\"')\"\n\nreturn msg;\n \n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 120,
+        "wires": [
+            [
+                "102e0f4df9fd3c56",
+                "c2cdf76b73b6f40a",
+                "78b0ffaebc011a65"
+            ]
+        ]
+    },
+    {
+        "id": "c9885a81a4369614",
+        "type": "function",
+        "z": "de73edb8b23a34f6",
+        "name": "db_monitoring",
+        "func": "msg.topic = \"INSERT INTO table_sensor(log_car) VALUES ('\"+msg.payload+\"')\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "ec0bd2e8569a3ef9",
+                "c2cdf76b73b6f40a",
+                "583d71f62f4d07b8"
+            ]
+        ]
+    },
+    {
+        "id": "102e0f4df9fd3c56",
+        "type": "ui_text",
+        "z": "de73edb8b23a34f6",
+        "group": "2f2fb62454ea311c",
+        "order": 6,
+        "width": 6,
+        "height": 2,
+        "name": "",
+        "label": "DOOR STATE",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 800,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "542388a37cd59267",
+        "type": "ui_gauge",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "group": "2f2fb62454ea311c",
+        "order": 14,
+        "width": 4,
+        "height": 2,
+        "gtype": "compass",
+        "title": "SERVO",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 440,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "07a6d27317257884",
+        "type": "remote-notification",
+        "z": "de73edb8b23a34f6",
+        "confignode": "295383cceb40099b",
+        "name": "",
+        "notificationTitle": "SmartGarage",
+        "notificationTitleType": "str",
+        "notificationBody": "Door Is Close ",
+        "notificationBodyType": "str",
+        "notificationSound": "success",
+        "notificationSoundComputed": "payload.sound",
+        "notificationSoundComputedType": "msg",
+        "output": 1,
+        "x": 350,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "018b9249e11d95d9",
+        "type": "remote-notification",
+        "z": "de73edb8b23a34f6",
+        "confignode": "295383cceb40099b",
+        "name": "",
+        "notificationTitle": "SmartGarage",
+        "notificationTitleType": "str",
+        "notificationBody": "Door Is Open",
+        "notificationBodyType": "str",
+        "notificationSound": "success",
+        "notificationSoundComputed": "payload.sound",
+        "notificationSoundComputedType": "msg",
+        "output": 1,
+        "x": 350,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4f589fa0d4f27ec",
+        "type": "remote-notification",
+        "z": "de73edb8b23a34f6",
+        "confignode": "295383cceb40099b",
+        "name": "",
+        "notificationTitle": "SmartGarage",
+        "notificationTitleType": "str",
+        "notificationBody": "Car Is Outside",
+        "notificationBodyType": "str",
+        "notificationSound": "success",
+        "notificationSoundComputed": "payload.sound",
+        "notificationSoundComputedType": "msg",
+        "output": 1,
+        "x": 350,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0df9a31c6502f818",
+        "type": "remote-notification",
+        "z": "de73edb8b23a34f6",
+        "confignode": "295383cceb40099b",
+        "name": "",
+        "notificationTitle": "SmartGarage",
+        "notificationTitleType": "str",
+        "notificationBody": "Car Is Inside",
+        "notificationBodyType": "str",
+        "notificationSound": "success",
+        "notificationSoundComputed": "payload.sound",
+        "notificationSoundComputedType": "msg",
+        "output": 1,
+        "x": 350,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c2cdf76b73b6f40a",
+        "type": "mysql",
+        "z": "de73edb8b23a34f6",
+        "mydb": "400b8c78adac9dcd",
+        "name": "",
+        "x": 1040,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cba30e3d30bd27c9",
+        "type": "mqtt in",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "topic": "/Node-RED-Co",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f689178ede6888cf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "d4f589fa0d4f27ec",
+                "c9885a81a4369614",
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "d3be64d4dcbfca63",
+        "type": "mqtt in",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "topic": "/Node-RED-Ci",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f689178ede6888cf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 440,
+        "wires": [
+            [
+                "c9885a81a4369614",
+                "0df9a31c6502f818",
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "de0fbef001b58f2a",
+        "type": "debug",
+        "z": "de73edb8b23a34f6",
+        "name": "ngetest",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "8479d34a54da3be7",
+        "type": "function",
+        "z": "de73edb8b23a34f6",
+        "name": "table_ui",
+        "func": "// Inisialisasi variabel konteks untuk menyimpan data\nif (!context.global.dataArray) {\n    context.global.dataArray = [];\n}\n\n// Fungsi untuk menambahkan data ke dalam array dan membuat objek baru\nfunction addDataToArray(data) {\n    // Mendapatkan timestamp saat ini dalam format tanggal dan waktu\n    var timestamp = new Date().toLocaleString();\n\n    // Aturan: Jika data adalah \"Door is Open\" atau \"Door is Close\", masukkan ke log_door\n    // Jika data adalah \"Car is Inside\" atau \"Car is Outside\", masukkan ke log_car\n    // Jika data adalah nama pengguna, masukkan ke user\n    if (data === \"Door is Open\" || data === \"Door is Close\") {\n        context.global.dataArray.push({\n            log_door: data,\n            log_car: null,\n            user: null,\n            timestamp: timestamp\n        });\n    } else if (data === \"Car is Inside\" || data === \"Car is Outside\") {\n        var lastObj = context.global.dataArray.length > 0 ? context.global.dataArray[context.global.dataArray.length - 1] : null;\n\n        if (!lastObj || (lastObj.log_door !== null && lastObj.log_car !== null)) {\n            context.global.dataArray.push({\n                log_door: null,\n                log_car: data,\n                user: null,\n                timestamp: timestamp\n            });\n        } else {\n            lastObj.log_car = data;\n            lastObj.timestamp = timestamp;\n        }\n    } else if (data === \"Ferdi Alwan\" || data === \"Alfonda Dimas\") {\n        var lastObj = context.global.dataArray.length > 0 ? context.global.dataArray[context.global.dataArray.length - 1] : null;\n\n        if (!lastObj || (lastObj.log_door !== null && lastObj.log_car !== null)) {\n            context.global.dataArray.push({\n                log_door: null,\n                log_car: null,\n                user: data,\n                timestamp: timestamp\n            });\n        } else {\n            lastObj.user = data;\n            lastObj.timestamp = timestamp;\n        }\n    }\n\n    // Kirim array yang disalin ke debug node\n    msg.payload = context.global.dataArray.slice();\n    return msg;\n}\n\n// Cek tipe data dan tambahkan ke dalam array sesuai dengan kubu\nif (msg.payload === \"Door is Open\" || msg.payload === \"Door is Close\" || msg.payload === \"Car is Outside\" || msg.payload === \"Car is Inside\" || msg.payload === \"Ferdi Alwan\" || msg.payload === \"Alfonda Dimas\") {\n    return addDataToArray(msg.payload);\n} else {\n    // Jika data tidak sesuai, tidak lakukan apa-apa\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 260,
+        "wires": [
+            [
+                "de0fbef001b58f2a",
+                "d23ec31752a3da20"
+            ]
+        ]
+    },
+    {
+        "id": "9d82d62aec8a3207",
+        "type": "mqtt in",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "topic": "/Node-RED-User",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f689178ede6888cf",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "e5e0efc9305a232f"
+            ]
+        ]
+    },
+    {
+        "id": "e5e0efc9305a232f",
+        "type": "change",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "514093134661620",
+                "fromt": "num",
+                "to": "Alfonda Dimas",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "45483138249110128",
+                "fromt": "num",
+                "to": "Ferdi Alwan",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "83352c2c719fbd10",
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "83352c2c719fbd10",
+        "type": "function",
+        "z": "de73edb8b23a34f6",
+        "name": "function 17",
+        "func": "msg.topic = \"INSERT INTO table_sensor(User) VALUES ('\"+msg.payload+\"')\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [
+                "c2cdf76b73b6f40a"
+            ]
+        ]
+    },
+    {
+        "id": "ab25c57c1b7b4cb7",
+        "type": "remote-access",
+        "z": "de73edb8b23a34f6",
+        "confignode": "295383cceb40099b",
+        "name": "",
+        "verbose": 0,
+        "x": 1060,
+        "y": 40,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "568dd4e1dbed48e2",
+        "type": "inject",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Car is Outside",
+        "payloadType": "str",
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "5df8a13f405201cc",
+        "type": "inject",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Car is Inside",
+        "payloadType": "str",
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "5b4c5a1f81891118",
+        "type": "inject",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Door Is Open",
+        "payloadType": "str",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "27b50932794d7b53",
+        "type": "inject",
+        "z": "de73edb8b23a34f6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Door Is Close",
+        "payloadType": "str",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "8479d34a54da3be7"
+            ]
+        ]
+    },
+    {
+        "id": "d23ec31752a3da20",
+        "type": "ui_table",
+        "z": "de73edb8b23a34f6",
+        "group": "2f2fb62454ea311c",
+        "name": "",
+        "order": 19,
+        "width": 10,
+        "height": 4,
+        "columns": [
+            {
+                "field": "log_door",
+                "title": "Door Event",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "log_car",
+                "title": "Car Event",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "user",
+                "title": "User",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 730,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2b15bfa5494e1381",
+        "type": "function",
+        "z": "de73edb8b23a34f6",
+        "name": "function 16",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "f686681bca90a6a7",
+                "542388a37cd59267"
+            ]
+        ]
+    },
+    {
+        "id": "5f1ab08614cc8947",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "d3e8dd6e46c066fb",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5908ec1ae12f5c28",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "d3e8dd6e46c066fb",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2c50959253d4b359",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "625d54678fd1cce4",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bfc6b59fbe8dafe4",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2113d66b920f31b9",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5001630a771b5b10",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "32e6adb7478b4f0c",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8a6a297d6d2ff18f",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7d4dbc20e3fd6758",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c97897ef7ab5309e",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 16,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "35e8a5dd201e4edc",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "906695a405931937",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "21c33ad296015e1f",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 20,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "88e098eb31e36683",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 21,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "24b625915211776b",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d499469551e7c430",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9062b655c3c2086a",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "efd9626aedac6f3a",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8787599cd6970dfc",
+        "type": "ui_spacer",
+        "z": "de73edb8b23a34f6",
+        "name": "spacer",
+        "group": "2f2fb62454ea311c",
+        "order": 26,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f689178ede6888cf",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2f2fb62454ea311c",
+        "type": "ui_group",
+        "name": "V1.0",
+        "tab": "fef8f50a4cb3eaa3",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "295383cceb40099b",
+        "type": "remote-config",
+        "name": "SmartGarage v1.0",
+        "host": "localhost",
+        "protocol": "http",
+        "port": "1880",
+        "baseurl": "/ui",
+        "instancehash": "5h1hr68316ht6hlsui97956e7g2k7rddss3sekhtjtkpy8dwwnwh189hqkw9noju",
+        "server": "nodered05.remote-red.com",
+        "region": "sg"
+    },
+    {
+        "id": "400b8c78adac9dcd",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhost",
+        "port": "3306",
+        "db": "db_monitoring",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "d3e8dd6e46c066fb",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "20",
+        "collapse": false
+    },
+    {
+        "id": "fef8f50a4cb3eaa3",
+        "type": "ui_tab",
+        "name": "Smart Garage",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
